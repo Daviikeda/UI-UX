@@ -1,0 +1,19 @@
+body {
+    color: var(--text-primary);
+    font-size: var(--font-);
+    font-family: var(--font-sans);
+}
+/* Navbar */
+.navbar {
+    width: 100vw;
+    height: 10vh;
+}
+/* Main */
+.content {
+    width: 100vw;
+    height: 90vh;
+}
+/* Footer */
+.footer {
+    width: 100vw;
+}
