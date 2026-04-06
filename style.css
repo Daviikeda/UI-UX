@@ -4,10 +4,12 @@ body {
     color: var(--text-primary);
     min-height: 100vh;
 }
+
 /* Navbar */
 .navbar {
     height: 10vh;
 }
+
 /* Main */
 .content {
     height: 90vh;
@@ -106,9 +108,4 @@ body {
 }
 .btn-login:active {
     transform: translateY(1px);
-}
-
-/* Footer */
-.footer {
-    width: 100vw;
 }
