@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloko Tracking | Cadastro de Veículo</title>
+    <link rel="stylesheet" href="./variables.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./cadastroveiculo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding: 18px 0;">
+                <a href="./index.html" class="btn-secondary">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="vehicle-registration-page">
+            <div class="page-header">
+                <div>
+                    <div class="breadcrumbs">Cadastro / Veículo</div>
+                    <h1>Cadastrar novo veículo</h1>
+                    <p class="page-description">Preencha os dados do veículo para incluir no monitoramento da frota.</p>
+                </div>
+            </div>
+
+            <div class="registration-grid">
+                <div class="panel">
+                    <h2>Detalhes do veículo</h2>
+
+                    <form class="vehicle-form">
+                        <div class="form-row">
+                            <div class="field-group">
+                                <label for="plate">Placa</label>
+                                <input id="plate" name="plate" type="text" placeholder="ABC1D23" required>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="brand">Marca</label>
+                                <input id="brand" name="brand" type="text" placeholder="Volkswagen" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="field-group">
+                                <label for="model">Modelo</label>
+                                <input id="model" name="model" type="text" placeholder="Nivus" required>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="year">Ano</label>
+                                <input id="year" name="year" type="number" min="1990" max="2026" placeholder="2024" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="field-group">
+                                <label for="vin">Chassi / VIN</label>
+                                <input id="vin" name="vin" type="text" placeholder="9BWZZZ377VT004251">
+                            </div>
+
+                            <div class="field-group">
+                                <label for="fuel">Tipo de combustível</label>
+                                <select id="fuel" name="fuel">
+                                    <option value="Flex">Flex</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Gás">Gás</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="field-group">
+                                <label for="obs">Observações</label>
+                                <textarea id="obs" name="obs" placeholder="Anotações extras"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="panel section-title">
+                            <h3>Configurações de rastreamento</h3>
+                            <span>Escolha como será tratado o veículo</span>
+                        </div>
+
+                        <div class="quick-toggle">
+                            <button type="button" class="toggle-btn active" data-toggle="sim">Telemetria ativa</button>
+                            <button type="button" class="toggle-btn" data-toggle="nao">Offline</button>
+                            <button type="button" class="toggle-btn" data-toggle="truck">Tração 4x4</button>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn-secondary">Limpar</button>
+                            <button type="submit" class="btn-primary">Salvar veículo</button>
+                        </div>
+                    </form>
+
+                    <div class="help-note">
+                        <strong>Dica:</strong> os campos Placa, Marca, Modelo e Ano são obrigatórios para cadastrar o veículo.
+                    </div>
+                </div>
+
+                <aside class="panel summary-card">
+                    <div class="section-title">
+                        <h3>Resumo rápido</h3>
+                        <span>Dados atualizados em tempo real</span>
+                    </div>
+
+                    <div class="summary-item highlight">
+                        <strong>Veículo</strong>
+                        <p class="summary-vehicle">Aguardando informações...</p>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>Combustível</strong>
+                        <p class="summary-fuel">Escolha o tipo de combustível</p>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>Status de telemetria</strong>
+                        <p class="summary-status">Ativado</p>
+                    </div>
+
+                    <div class="summary-item">
+                        <strong>Pronto para salvar</strong>
+                        <p class="summary-ready">Preencha os campos do formulário.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.querySelector('.vehicle-form');
+        const summary = {
+            vehicle: document.querySelector('.summary-vehicle'),
+            fuel: document.querySelector('.summary-fuel'),
+            status: document.querySelector('.summary-status'),
+            ready: document.querySelector('.summary-ready')
+        };
+
+        const inputs = {
+            plate: document.getElementById('plate'),
+            brand: document.getElementById('brand'),
+            model: document.getElementById('model'),
+            year: document.getElementById('year'),
+            fuel: document.getElementById('fuel'),
+            obs: document.getElementById('obs')
+        };
+
+        const toggles = document.querySelectorAll('.quick-toggle button');
+        let trackingStatus = 'Ativado';
+
+        const updateSummary = () => {
+            const plate = inputs.plate.value.trim() || 'Sem placa';
+            const brand = inputs.brand.value.trim() || 'Sem marca';
+            const model = inputs.model.value.trim() || 'Sem modelo';
+            const year = inputs.year.value.trim() || '----';
+
+            summary.vehicle.textContent = `${plate} · ${brand} ${model} · ${year}`;
+            summary.fuel.textContent = inputs.fuel.value;
+            summary.status.textContent = trackingStatus;
+            summary.ready.textContent = (inputs.plate.value && inputs.brand.value && inputs.model.value && inputs.year.value)
+                ? 'Pronto para salvar'
+                : 'Preencha os campos obrigatórios';
+        };
+
+        toggles.forEach(button => {
+            button.addEventListener('click', () => {
+                toggles.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                if (button.dataset.toggle === 'sim') trackingStatus = 'Ativado';
+                if (button.dataset.toggle === 'nao') trackingStatus = 'Offline';
+                if (button.dataset.toggle === 'truck') trackingStatus = 'Tração 4x4';
+
+                updateSummary();
+            });
+        });
+
+        Object.values(inputs).forEach(input => {
+            input.addEventListener('input', updateSummary);
+        });
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            if (!inputs.plate.value || !inputs.brand.value || !inputs.model.value || !inputs.year.value) {
+                alert('Preencha os campos obrigatórios para cadastrar o veículo.');
+                return;
+            }
+
+            alert(`Veículo ${inputs.plate.value.toUpperCase()} cadastrado com sucesso!`);
+            form.reset();
+            document.querySelector('.quick-toggle button[data-toggle="sim"]').click();
+            updateSummary();
+        });
+
+        document.addEventListener('DOMContentLoaded', updateSummary);
+    </script>
+</body>
+
+</html>

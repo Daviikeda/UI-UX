@@ -1,0 +1,343 @@
+:root {
+    --bg: #f4f8fb;
+    --surface: #ffffff;
+    --primary: #1f4ad8;
+    --primary-soft: #e8efff;
+    --secondary: #34a853;
+    --accent: #f5a623;
+    --text: #102a43;
+    --muted: #58687c;
+    --border: #d8e2ef;
+    --shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+}
+
+body {
+    background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.vehicle-registration-page {
+    padding: 40px 24px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 24px;
+}
+
+.page-header > div {
+    flex: 1;
+}
+
+.page-header .breadcrumbs {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.page-description {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.registration-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 0.9fr;
+    gap: 28px;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 36px;
+}
+
+.panel h2,
+.panel h3 {
+    margin: 0 0 24px;
+    color: var(--text);
+}
+
+.panel h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.panel h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field-group label {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 16px;
+    background: #fff;
+    color: var(--text);
+    font-size: 0.98rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.field-group input::placeholder,
+.field-group select::placeholder,
+.field-group textarea::placeholder {
+    color: #b0c4de;
+}
+
+.field-group input:hover,
+.field-group select:hover,
+.field-group textarea:hover {
+    border-color: #a8c5ff;
+    background: #fafbff;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(31, 74, 216, 0.15);
+    background: #fff;
+}
+
+.field-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.section-divider {
+    margin: 32px 0;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+}
+
+.quick-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.quick-toggle button {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--text);
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.quick-toggle button:hover {
+    border-color: #a8c5ff;
+    background: #f5f8ff;
+}
+
+.quick-toggle button.active {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+    color: var(--primary);
+    box-shadow: 0 8px 20px rgba(31, 74, 216, 0.15);
+}
+
+.panel .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.panel .section-title span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.summary-card {
+    display: grid;
+    gap: 18px;
+}
+
+.summary-card .summary-item {
+    background: linear-gradient(135deg, #f5f9ff 0%, #eef6ff 100%);
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.summary-card .summary-item:hover {
+    border-color: var(--primary-soft);
+    box-shadow: 0 6px 16px rgba(31, 74, 216, 0.08);
+}
+
+.summary-card .summary-item strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.summary-card .summary-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.summary-card .summary-item.highlight {
+    background: linear-gradient(135deg, #eef6ff 0%, #e5f0ff 100%);
+    border-color: var(--primary);
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.btn-secondary,
+.btn-primary {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--muted);
+    background: #f8f9fa;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1839a8;
+    box-shadow: 0 12px 32px rgba(31, 74, 216, 0.25);
+    transform: translateY(-2px);
+}
+
+.help-note {
+    margin-top: 28px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #eef7ff 0%, #f5faff 100%);
+    color: var(--muted);
+    border: 1px solid #d7e6ff;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.help-note strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-registration-page {
+        padding: 28px 16px 48px;
+    }
+
+    .panel {
+        padding: 24px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        width: 100%;
+    }
+}
