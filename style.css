@@ -7,7 +7,64 @@ body {
 
 /* Navbar */
 .navbar {
-    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--space-4);
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-left > a {
+    margin: 0;
+}
+
+.navbar-center {
+    /* flex: 1; */
+    justify-content: center;
+}
+
+.navbar-left {
+    gap: 16px;
+}
+
+.logo {
+    width: 120px;
+}
+
+.search-bar {
+    background-color: var(--status-offline);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 14px;
+}
+
+.search-bar input{
+    background-color: var(--status-offline);
+    border: none;
+    background: transparent;
+    outline: none;
+    
+}
+
+.nav-item {
+    margin-left: var(--space-4);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    color: var(--color-primary);
 }
 
 /* Main */
