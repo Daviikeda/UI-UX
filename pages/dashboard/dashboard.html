@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloko Tracking | Dashboard</title>
+    <link rel="stylesheet" href="../../variables.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Cloko Tracking</h1>
+        <div class="header-actions">
+            <button class="btn btn-primary" onclick="alert('Funcionalidade de cadastro em breve!')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Novo Veículo
+            </button>
+        </div>
+    </header>
+    <main class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <h2>Painel de Controle</h2>
+            
+            <div class="sidebar-section">
+                <h3>Filtros de Mapa</h3>
+                <select class="custom-select">
+                    <option value="">Selecionar Veículo Específico...</option>
+                    <option value="ABC-1234" data-lat="-23.3102" data-lng="-51.1628">ABC-1234 (Fiorino)</option>
+                    <option value="XYZ-9876" data-lat="-23.2954" data-lng="-51.1661">XYZ-9876 (Ranger)</option>
+                    <option value="QWE-5544" data-lat="-23.3211" data-lng="-51.1850">QWE-5544 (Saveiro)</option>
+                    <option value="LMN-1122" data-lat="-23.3045" data-lng="-51.1691">LMN-1122 (Montana - Pátio)</option>
+                </select>
+
+                <div class="filter-group">
+                    <label><input type="checkbox" checked> Em Movimento</label>
+                    <label><input type="checkbox" checked> Ociosos (Motor Ligado)</label>
+                    <label><input type="checkbox" checked> Veículos com Alerta</label>
+                    <label><input type="checkbox"> Desligados / Offline</label>
+                </div>
+            </div>
+        </aside>
+
+        <section class="dashboard-content">
+            <div id="map"></div>
+                
+            <section class="widget-panel">
+                <article class="widget-card">
+                    <h3>Segurança & Telemetria</h3>
+                    <table>
+                        <tr><th>Motorista</th><th>Infração</th><th>Score</th></tr>
+                        <tr><td>Carlos S.</td><td>Frenagem</td><td class="text-warning">85</td></tr>
+                        <tr><td>João M.</td><td class="text-error font-bold">Excesso Vel.</td><td class="text-error">72</td></tr>
+                    </table>
+                </article>
+                <article class="widget-card">
+                    <h3>Alertas de Manutenção</h3>
+                    <table>
+                        <tr><th>Veículo</th><th>Serviço</th><th>Status</th></tr>
+                        <tr><td>ABC-1234</td><td>Óleo</td><td class="text-warning">Em 500km</td></tr>
+                        <tr><td>XYZ-9876</td><td>Pneus</td><td class="text-error font-bold">Vencido!</td></tr>
+                    </table>
+                </article>
+                <article class="widget-card">
+                    <h3>Status da Frota</h3>
+                    <div class="chart-container">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </article>
+            </section>
+
+            <section class="table-wrapper">
+                <h2>Detalhamento da Frota</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Placa</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Chassi / VIN</th><th>Combustível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="plate-badge">ABC-1234</span></td><td>Fiat</td><td>Fiorino Endurance</td><td>2022</td><td>9BD 123456 A1 789012</td><td>Flex</td>
+                        </tr>
+                        <tr>
+                            <td><span class="plate-badge">XYZ-9876</span></td><td>Ford</td><td>Ranger XLS</td><td>2021</td><td>8AF 987654 B2 123456</td><td>Diesel</td>
+                        </tr>
+                        <tr>
+                            <td><span class="plate-badge">QWE-5544</span></td><td>Volkswagen</td><td>Saveiro Robust</td><td>2023</td><td>9BW 554433 C3 654321</td><td>Flex</td>
+                        </tr>
+                        <tr>
+                            <td><span class="plate-badge">LMN-1122</span></td><td>Chevrolet</td><td>Montana LS</td><td>2024</td><td>9BG 112233 D4 112233</td><td>Gasolina</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
