@@ -153,15 +153,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // GERENCIAMENTO DE DISPOSITIVOS
     // ========================================
 
-    const addDeviceBtn = document.querySelector('.btn-primary');
-    if (addDeviceBtn) {
-        addDeviceBtn.addEventListener('click', function () {
-            console.log('Botão "Adicionar Novo Dispositivo" clicado');
-            // Aqui pode adicionar lógica para abrir um modal de adição de novo dispositivo
-            alert('Funcionalidade de adicionar dispositivo em desenvolvimento');
-        });
-    }
-
     // Gerenciamento de botões de ação dos dispositivos
     const deviceActionBtns = document.querySelectorAll('.btn-action');
     deviceActionBtns.forEach(btn => {
