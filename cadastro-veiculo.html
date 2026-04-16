@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloko Tracking | Cadastro de Veículo</title>
     <link rel="stylesheet" href="./variables.css">
-    <link rel="stylesheet" href="./footer.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/navbar.css">
     <link rel="stylesheet" href="./cadastro-veiculo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
@@ -15,8 +15,20 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding: 18px 0;">
-                <a href="./index.html" class="btn-secondary">Voltar</a>
+            <a href="./pages/dashboard/dashboard.html">
+                <h1>Cloko Tracking</h1>
+            </a>
+            <div class="navbar-tools">
+                <button class="btn btn btn-primary">
+                    <i class="bi bi-plus-circle"></i>
+                    Novo Veículo
+                </button>
+                <hr>
+                <div>
+                    <a class="navbar-profile-link" href="./config.html">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -25,7 +37,6 @@
         <section class="vehicle-registration-page">
             <div class="page-header">
                 <div>
-                    <div class="breadcrumbs">Cadastro / Veículo</div>
                     <h1>Cadastrar novo veículo</h1>
                     <p class="page-description">Preencha os dados do veículo para incluir no monitoramento da frota.</p>
                 </div>
@@ -96,8 +107,8 @@
                         </div>
 
                         <div class="form-actions">
-                            <button type="reset" class="btn-secondary">Limpar</button>
-                            <button type="submit" class="btn-primary">Salvar veículo</button>
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                            <button type="submit" class="btn btn-primary">Salvar veículo</button>
                         </div>
                     </form>
 
