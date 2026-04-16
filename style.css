@@ -93,6 +93,7 @@ body {
     background-color: var(--bg-input);
     border-radius: var(--border-radius-lg);
     border: 2px dashed var(--border-color);
+    background-image: url(./assets/overview_image.png);
 }
 
 .title {
