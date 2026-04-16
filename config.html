@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloko Tracking | Configurações</title>
+    <link rel="stylesheet" href="./variables.css">
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/navbar.css">
+    <link rel="stylesheet" href="./config.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="./pages/dashboard/dashboard.html">
+                <h1>Cloko Tracking</h1>
+            </a>
+            <div class="navbar-tools">
+                <button class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i>
+                    Novo Veículo
+                </button>
+                <hr>
+                <div>
+                    <a class="navbar-profile-link" href="./config.html">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="settings-container">
+        <aside class="settings-sidebar">
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item active" data-target="devices">
+                        <i class="bi bi-cpu"></i>
+                        <span>Dispositivos</span>
+                    </li>
+                    <li class="nav-item" data-target="alerts">
+                        <i class="bi bi-bell"></i>
+                        <span>Alertas</span>
+                    </li>
+                    <li class="nav-item" data-target="security">
+                        <i class="bi bi-lock"></i>
+                        <span>Segurança</span>
+                    </li>
+                    <li class="nav-item" data-target="appearance">
+                        <i class="bi bi-palette"></i>
+                        <span>Aparência</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="settings-content">
+            <!-- SEÇÃO 1: Gerenciamento de Dispositivos -->
+            <div id="devices" class="tab-content active">
+                <div class="section-header">
+                    <h2>Meus Dispositivos</h2>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i>
+                        Adicionar Novo
+                    </button>
+                </div>
+
+                <div class="device-grid">
+                    <div class="device-card">
+                        <div class="device-header">
+                            <h3>Veículo 001</h3>
+                            <span class="status-badge online">
+                                <i class="bi bi-circle-fill"></i> Online
+                            </span>
+                        </div>
+                        <div class="device-info">
+                            <p><strong>Modelo:</strong> Toyota Hilux</p>
+                            <p><strong>Placa:</strong> ABC-1234</p>
+                            <p><strong>IMEI:</strong> 357398123456789</p>
+                        </div>
+                        <div class="device-actions">
+                            <button class="btn-action" title="Editar ícone">
+                                <i class="bi bi-pencil"></i> Editar Ícone
+                            </button>
+                            <button class="btn-action" title="Intervalo de transmissão">
+                                <i class="bi bi-clock"></i> Intervalo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="device-card">
+                        <div class="device-header">
+                            <h3>Veículo 002</h3>
+                            <span class="status-badge offline">
+                                <i class="bi bi-circle-fill"></i> Offline
+                            </span>
+                        </div>
+                        <div class="device-info">
+                            <p><strong>Modelo:</strong> Honda Civic</p>
+                            <p><strong>Placa:</strong> XYZ-5678</p>
+                            <p><strong>IMEI:</strong> 357398123456790</p>
+                        </div>
+                        <div class="device-actions">
+                            <button class="btn-action" title="Editar ícone">
+                                <i class="bi bi-pencil"></i> Editar Ícone
+                            </button>
+                            <button class="btn-action" title="Intervalo de transmissão">
+                                <i class="bi bi-clock"></i> Intervalo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="device-card">
+                        <div class="device-header">
+                            <h3>Veículo 003</h3>
+                            <span class="status-badge online">
+                                <i class="bi bi-circle-fill"></i> Online
+                            </span>
+                        </div>
+                        <div class="device-info">
+                            <p><strong>Modelo:</strong> Fiat Uno</p>
+                            <p><strong>Placa:</strong> DEF-9012</p>
+                            <p><strong>IMEI:</strong> 357398123456791</p>
+                        </div>
+                        <div class="device-actions">
+                            <button class="btn-action" title="Editar ícone">
+                                <i class="bi bi-pencil"></i> Editar Ícone
+                            </button>
+                            <button class="btn-action" title="Intervalo de transmissão">
+                                <i class="bi bi-clock"></i> Intervalo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 2: Alertas e Notificações -->
+            <div id="alerts" class="tab-content">
+                <h2>Configurações de Alertas</h2>
+
+                <!-- Canais de Alerta -->
+                <div class="notification-group">
+                    <h3>Canais de Alerta</h3>
+                    <div class="alert-channels">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-label">
+                                <i class="bi bi-envelope"></i> E-mail
+                            </span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-label">
+                                <i class="bi bi-bell"></i> Notificação Push
+                            </span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkbox-label">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Regras de Eventos -->
+                <div class="alert-rules">
+                    <h3>Regras de Eventos</h3>
+                    <div class="rule-container">
+                        <div class="rule-item">
+                            <label for="speed-limit">
+                                <i class="bi bi-speedometer2"></i> Excesso de Velocidade
+                                <span class="rule-value" id="speed-value">80 km/h</span>
+                            </label>
+                            <input type="range" id="speed-limit" min="30" max="150" value="80" class="slider">
+                        </div>
+
+                        <div class="rule-item">
+                            <label for="ignition-time">
+                                <i class="bi bi-lightning"></i> Ignição Ligada
+                                <span class="rule-value" id="ignition-value">30 minutos</span>
+                            </label>
+                            <input type="range" id="ignition-time" min="5" max="120" value="30" step="5" class="slider">
+                        </div>
+
+                        <div class="rule-item">
+                            <label for="battery-alert">
+                                <i class="bi bi-battery"></i> Nível de Bateria
+                                <span class="rule-value" id="battery-value">20%</span>
+                            </label>
+                            <input type="range" id="battery-alert" min="5" max="50" value="20" step="5" class="slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3: Segurança e Permissões -->
+            <div id="security" class="tab-content">
+                <h2>Segurança e Acesso</h2>
+
+                <!-- Autenticação -->
+                <div class="auth-settings">
+                    <h3>Autenticação</h3>
+                    <div class="auth-options">
+                        <div class="auth-option">
+                            <div class="option-header">
+                                <h4>Autenticação em 2 Etapas</h4>
+                                <span class="status-label">Desativado</span>
+                            </div>
+                            <p class="option-description">Adicione uma camada extra de segurança à sua conta</p>
+                            <button class="btn-secondary">
+                                <i class="bi bi-shield-lock"></i> Ativar
+                            </button>
+                        </div>
+
+                        <div class="auth-option">
+                            <div class="option-header">
+                                <h4>Trocar Senha</h4>
+                            </div>
+                            <p class="option-description">Atualize sua senha regularmente para manter sua conta segura</p>
+                            <form class="password-form">
+                                <input type="password" placeholder="Senha Atual" class="form-input">
+                                <input type="password" placeholder="Nova Senha" class="form-input">
+                                <input type="password" placeholder="Confirmar Nova Senha" class="form-input">
+                                <button type="submit" class="btn-secondary">Atualizar Senha</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gerenciamento de Usuários -->
+                <div class="user-management">
+                    <h3>Gerenciamento de Usuários</h3>
+                    <div class="table-wrapper">
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>Usuário</th>
+                                    <th>Email</th>
+                                    <th>Permissão</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>João Silva</td>
+                                    <td>joao@cloko.com</td>
+                                    <td>
+                                        <select class="permission-select">
+                                            <option selected>Admin</option>
+                                            <option>Visualizador</option>
+                                            <option>Editor</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-danger" title="Remover">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Maria Santos</td>
+                                    <td>maria@cloko.com</td>
+                                    <td>
+                                        <select class="permission-select">
+                                            <option>Admin</option>
+                                            <option selected>Visualizador</option>
+                                            <option>Editor</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-danger" title="Remover">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pedro Costa</td>
+                                    <td>pedro@cloko.com</td>
+                                    <td>
+                                        <select class="permission-select">
+                                            <option>Admin</option>
+                                            <option selected>Editor</option>
+                                            <option>Visualizador</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-danger" title="Remover">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn-secondary">
+                        <i class="bi bi-person-plus"></i> Adicionar Novo Usuário
+                    </button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 4: Aparência (Modo Light/Dark) -->
+            <div id="appearance" class="tab-content">
+                <h2>Aparência do Sistema</h2>
+
+                <div class="theme-switch-container">
+                    <div class="theme-option">
+                        <h3>
+                            <i class="bi bi-palette"></i> Tema do Sistema
+                        </h3>
+                        <p class="theme-description">Escolha entre modo claro e escuro para melhor conforto visual</p>
+                        
+                        <div class="toggle-container">
+                            <button class="theme-btn theme-light active" data-theme="light">
+                                <i class="bi bi-sun"></i>
+                                <span>Claro</span>
+                            </button>
+                            <button class="theme-btn theme-dark" data-theme="dark">
+                                <i class="bi bi-moon"></i>
+                                <span>Escuro</span>
+                            </button>
+                        </div>
+
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="theme-toggle" class="toggle-checkbox">
+                            <label for="theme-toggle" class="toggle-label">
+                                <span class="toggle-knob"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="theme-preview">
+                        <h4>Visualização da Interface</h4>
+                        <div class="preview-box preview-light">
+                            <div class="preview-header">Header</div>
+                            <div class="preview-content">Conteúdo da página</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./sidebar.js"></script>
+</body>
+</html>
