@@ -38,7 +38,7 @@
                     <h1 class="title">Monitoramento em Tempo Real</h1>
                     <p class="title-legend">Acesse o painel de telemetria da sua frota. Acompanhe rotas, alertas e
                         manutenções em um só lugar.</p>
-                    <form action="" method="post">
+                    <form action="" method="post" id="login">
                         <div class="form-inputs-container">
                             <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ da Empresa">
                             <input type="password" name="password" id="password" placeholder="Senha">
@@ -163,6 +163,11 @@
             </nav>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" crossorigin="anonymous"></script>
+    <script>
+        $('#cnpj').mask('00.000.000/0000-00');
+    </script>
 </body>
 
 </html>
