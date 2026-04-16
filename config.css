@@ -58,7 +58,7 @@
 
 .settings-content {
     flex: 1;
-    background-color: var(--color-secondary);
+    background-color: var(--bg-panel);
     border-radius: var(--border-radius-lg);
     padding: var(--space-8);
     box-shadow: var(--shadow-sm);
@@ -103,27 +103,6 @@
 
 .section-header h2 {
     margin: 0;
-}
-
-.btn-primary {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    background-color: var(--color-primary);
-    color: var(--text-inverse);
-    border: none;
-    border-radius: var(--border-radius-md);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
 }
 
 .device-grid {
