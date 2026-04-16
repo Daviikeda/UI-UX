@@ -55,6 +55,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-app: #0F172A;
+    --bg-input: #0F172A;
     --bg-panel: #1E293B;
     --text-primary: #F8FAFC;
     --text-secondary: #CBD5E1;
